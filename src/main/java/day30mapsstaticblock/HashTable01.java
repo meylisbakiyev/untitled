@@ -22,5 +22,6 @@ import java.util.Hashtable;
         //ht.put("Italy", null); ==> "null" cannot be used in value of HashTable
 
         System.out.println(ht);// {USA=400000000, Albania=3000000, Germany=83000000, Turkey=81000000, Belgium=12000000}
+
     }
 }
