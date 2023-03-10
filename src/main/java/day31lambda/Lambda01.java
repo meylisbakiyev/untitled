@@ -46,6 +46,10 @@ public class Lambda01 {
         System.out.println(findMax(nums));
         System.out.println();
         System.out.println(findMin(nums));
+        System.out.println();
+        System.out.println(findMinGreaterThanSevenEven(nums));
+        System.out.println();
+        System.out.println(findAnyValueLessThanFifteenEven(nums));
 
 
     }
@@ -129,7 +133,7 @@ public class Lambda01 {
                 reduce(1,(t,u)->t*u);
     }
 
-    //7)Create a method to find the "maximum value" from the list elements
+    //7)Create a method to find the "maximum value" from the list elements    >--> SHUNDA GALLYM <--<
 
     //1.Way:
     public static int findMax(List<Integer> myList){
@@ -144,7 +148,7 @@ public class Lambda01 {
     //3.Way:
     public static int findMax3(List<Integer> myList){
         return myList.stream().distinct().sorted().reduce((t,u)->u).get();//reduce() method with a single parameter does not return Integer
-        //To make return type integer use get() method
+                                                                          //To make return type integer use get() method
     }
 
     //4.Way:
@@ -170,9 +174,24 @@ public class Lambda01 {
     }
 
     //3.Way:
-    public static int findMin3(List<Integer> myList){
+    public static int findMin3(List<Integer> myList) {
         return myList.stream().distinct().sorted().findFirst().get();
     }
 
     //9)Create a method to find the minimum value which is greater than 7 and even from the list
+    public static int findMinGreaterThanSevenEven(List<Integer> myList){
+
+        return myList.stream().distinct().filter(t->t>7 && t%2==0).sorted().findFirst().get();
+
+    }
+
+    //10) Create a method to find any value which is less than 15 and even from the list
+    public static int findAnyValueLessThanFifteenEven(List<Integer> myList){
+
+       return myList.stream().distinct().filter(t->t<15 && t%2==0).findAny().get();
+
+    }
+
+
+
 }
