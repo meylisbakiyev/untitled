@@ -1,5 +1,9 @@
 package day32lambda;
 
+import day33Lambda.Course;
+
+import java.util.List;
+
 public class Utils {
 
     public static void printInTheSameLineWithSpace(Object s){
@@ -19,5 +23,5 @@ public class Utils {
         }
         return sum;
     }
-
 }
+
